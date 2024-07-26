@@ -4,11 +4,13 @@ import { CiEdit } from "react-icons/ci";
 import '../css/Todo.css'
 import '../App.css'
 
-function Todo() {
+function Todo({ todo }) {
+    // Todo ID ve CONTENT i böyle tanımladık.
+    const { id, content } = todo;
     return (
         <div className='todo'>
             <div>
-                BEN İLK TODOYUM.
+                {content}
             </div>
             <div>
                 <CiCircleRemove className='todo-icons' />
