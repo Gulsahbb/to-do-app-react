@@ -12,6 +12,11 @@ function App() {
     // Yeni bir dizi içerisinde önceki todoları aç, üzerine de bana gelen yeni todoları ekle
     setTodos([...todos, newTodo]);
   }
+  // Todo Silme Fonksiyonu
+  const removeTodo = (todoId) => {
+    // Todolar üzerinde filter ile dön bu todoların idleri eşitse kenara koy.False dönenleri çıkart.
+    setTodos([...todos.filter((todo) => todo.id !== todoId)]);
+  }
   console.log(todos);
   return (
     <div className='App'>
@@ -23,7 +28,7 @@ function App() {
         <TodoCreate onCreateTodo={createTodo} />
         {/* TODO Listelemek için */}
         {/* Todo statini TodoList componentine prop geçtik.*/}
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onRemoveTodo={removeTodo} />
       </div>
     </div>
   )
