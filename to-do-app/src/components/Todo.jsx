@@ -17,10 +17,12 @@ function Todo({ todo, onRemoveTodo, onUpdateTodo }) {
     // Todo Güncellenen yeni todo için state
     const [editTodo, setEditTodo] = useState(content);
 
+    // Todo Silme
     const removeTodo = () => {
         onRemoveTodo(id);
     }
 
+    // Todo Güncelleme
     const updateTodo = () => {
         const request = {
             id: id,
@@ -30,12 +32,14 @@ function Todo({ todo, onRemoveTodo, onUpdateTodo }) {
         setEditable(false);
     }
     return (
+
         <div className='todo'>
             <div>
                 {
                     editable ? <input value={editTodo} onChange={(e) => setEditTodo(e.target.value)} style={{ width: '380px' }} className="todo-input" type="text" /> : content
                 }
             </div>
+
             <div>
                 <CiCircleRemove className='todo-icons' onClick={removeTodo} />
                 {
@@ -44,7 +48,6 @@ function Todo({ todo, onRemoveTodo, onUpdateTodo }) {
 
                         : <CiEdit className='todo-icons' onClick={() => setEditable(true)} />
                 }
-
             </div>
 
         </div>
