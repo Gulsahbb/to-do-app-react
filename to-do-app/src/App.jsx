@@ -6,11 +6,10 @@ function App() {
 
   return (
     <div className='App'>
-      <div style={{ width: '500px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <div className='App-todo'>
         <TodoCreate />
         <TodoList />
       </div>
-
     </div>
   )
 }
