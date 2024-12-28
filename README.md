@@ -1,1 +1,1 @@
-# React Test Project
+# React Practice Project
